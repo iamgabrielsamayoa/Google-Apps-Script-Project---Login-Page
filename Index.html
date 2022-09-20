@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+   
+
+     <title>UMG Login</title>
+
+   
+
+
+<!-- HTML EMPIEZA ACA -->
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" onClick="function3()">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" onClick="function1()">Registrarse</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.umg.edu.gt/">Sitio de la UMG </a>
+        </li>
+      
+      </ul>
+    </div>
+  </nav>
+
+  <body class="img js-fullheight" onload="soapActivation()" style="background-image:url('https://drive.google.com/uc?export=view&id=<?= pictures[0] ?>'); font-family:Lato" >
+    <br><br>
+
+
+    
+<!--Login-->
+<center>
+<br>  
+    <p style="color:white"  id = "ida">Soap Service from Banguat</p>
+    
+
+ <div class="page1_class1" id="page1_id1" style="background:none;;font: 'Lato'; border:2px solid gray;border-radius: 20px;width: 400px;padding-top: 10px;padding-bottom: 20px;padding-left: 20px;padding-right: 20px;"> 
+    <h1 style="color:white">Inicio de sesión</h1>
+    <br>
+    <input type="text" class="form-control" id="username" placeholder="usuario" style="border-top: none;border-right: none;border-left: none;outline: none; text-align: center;font-size:0.9em ;width: 50%;font-weight:bold;"/><br>
+    <br>
+    <input type="password" class="form-control" id="password" placeholder="contraseña" style="border-top: none;border-right: none;border-left: none;outline: none; text-align: center;font-size:0.9em ;width: 50%;font-weight:bold;"/>
+    <br><span id="errorMessage" style="color: red" ></span><br>
+    <input class="btn btn-outline-success" type="submit" value="Login" onclick="LoginUser()"  style="float: right;padding-top: 1px;padding-bottom: 1px;padding-left: 40px;padding-right: 40px;font-size: 1em;font-weight:bold;" /><br>
+    
+    <br>
+    <b>¿Aún no eres usuario?</b>
+    <br>
+        <input type="button" class="btn btn-outline-primary" onClick="function1()" value="Registrarse!" />
+    </br>
+    <p type="button" class="btn btn-outline-secondary" onclick="function5()" style = border:none >Olvide mi Contraseña</p>
+  </div>
+
+
+
+
+
+<!--page2-->
+<div class="page2_class1" id="page2_id1" style="background:none; border:1px solid gray;border-radius: 20px;width: 400px;padding-top: 5px;padding-bottom: 10px;padding-left: 10px;padding-right: 10px;">
+ <h1>Registrar Nueva Cuenta</h1>
+    <input type="text" class="form-control" id="cname" placeholder="Nombre" style="border-top: none;border-right: none;border-left: none;outline: none; text-align: center;font-size:0.9em ;width: 50%;font-weight:bold;"/><br>
+
+    <br>
+    <input type="text" class="form-control" id="last_name" placeholder="Apellido" style="border-top: none;border-right: none;border-left: none;outline: none; text-align: center;font-size:0.9em ;width: 50%;font-weight:bold;" /><br>
+    <br>
+    <input type="password" class="form-control" id="cpassword" placeholder="Contraseña a usar" style="border-top: none;border-right: none;border-left: none;outline: none; text-align: center;font-size: 0.9;width: 50%;font-weight:bold;" /><br>
+        <br>
+    <input type="text" class="form-control" placeholder="ejemplo@gmail.com" id="email" style="border-top: none;border-right: none;border-left: none;outline: none; text-align: center;font-size:0.9em ;width: 50%;font-weight:bold;" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/><br>
+    <small id="emailHelp" class="form-text text-muted">Nunca compartiremos tu email con nadie.</small>
+    <br>
+    <b style="color:white;">Es importante ingresar una contraseña segura, que pueda recordar.</b>
+    <input type="submit" class="btn btn-outline-success" value="Registrarse" onclick="CreateUser()"  />
+    <br>
+</div>
+
+
+
+<!--page3-->
+ <div class="page3_class1" id="page3_id1" style="background:none;border:2px solid gray;border-radius: 20px;width: 400px;padding-top: 10px;padding-bottom: 20px;padding-left: 20px;padding-right: 20px;"><center>
+    <h2 class="alert alert-success" > Tu cuenta se ha creado con éxito.</h2>
+    <input type="submit"  onClick="function3()" value="Login" style="font-weight:bold;"><br>
+ </div> 
+
+<!--page3-->
+ <div class="page6_class1" id="page6_id1" style="background:none;border:2px solid gray;border-radius: 20px;width: 400px;padding-top: 10px;padding-bottom: 20px;padding-left: 20px;padding-right: 20px;"><center>
+    <h2 class="alert alert-success" > Tu contraseña se ha recuperado con éxito.</h2>
+    <input type="submit"  onClick="function3()" value="Login" style="font-weight:bold;"><br>
+ </div> 
+
+<!--page4-->
+<div class="page4_class1" id="page4_id1" style="background:none;border:2px solid gray;border-radius: 20px;width: 250px;padding-top: 10px;padding-bottom: 20px;padding-left: 20px;padding-right: 20px;" ><center>
+    <br>
+    <h2>Bienvenido(a) <b id="displayname" style="color:blue;"></b>!</h2>
+    <div class="alert-heading"></div>
+    <h2 class="alert alert-success"> Te has loggeado exitosamente</h2>
+    <h2>**************</h2>
+    <p>Haz Click para ir al sistema <a href="http://18.220.94.192/CodeIg/CRUD_UMG/Index.php/welcome">this link</a>.</p>
+    <br>
+  </div>
+</center>
+
+
+
+<!--forgot-->
+
+<center>
+<div class="page2_class1" id="page5_id1" style="background:none; border:2px solid gray;border-radius: 20px;width: 450px;padding-top: 10px;padding-bottom: 20px;padding-left: 20px;padding-right: 20px;"><center>
+  <h1>Recuperar Contraseña</h1>
+     <input type="text" id="cname2" class="form-control" placeholder="Nombre" style="border-top: none;border-right: none;border-left: none;outline: none; text-align: center;font-size:0.9em ;width: 50%;font-weight:bold;"/><br>
+ 
+     <br>
+     <input type="text" class="form-control" id="last_name2" placeholder="Apellido" style="border-top: none;border-right: none;border-left: none;outline: none; text-align: center;font-size:0.9em ;width: 50%;font-weight:bold;" /><br>
+         <br>
+     <input type="text" class="form-control" placeholder="ejemplo@gmail.com" required id="email2" style="border-top: none;border-right: none;border-left: none;outline: none; text-align: center;font-size:0.9em ;width: 50%;font-weight:bold;" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/><br>
+     
+     <br>
+     <b style="color:white;">Estaremos enviandote un correo electronico con tu contraseña.</b><br><br>
+     <input type="submit" class="btn btn-outline-success" value="Recuperar" onclick="RecoverUserPassword()" style="float: right;padding-top: 1px;padding-bottom: 1px;padding-left: 10px;padding-right: 10px;font-size: 0.9em;font-weight:bold;" />
+     <br>
+    </center>
+ </div>
+</center>
+
+  </body>
+
+
+ <script>
+
+
+ function soapRequest() {
+        var str = '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/'+
+        '" xmlns:ws="http://www.banguat.gob.gt/variables/ws/">'
+        +'<soapenv:Header/>'
+        +' <soapenv:Body>'
+        +'<ws:TipoCambioDia/>'+
+        '</soapenv:Body>'+
+        '</soapenv:Envelope>';
+       
+        function createCORSRequest(method, url) {
+                    var xhr = new XMLHttpRequest();
+                    if ("withCredentials" in xhr) {
+                        xhr.open(method, url, false);
+                    } else if (typeof XDomainRequest != "undefined") {
+                        alert
+                        xhr = new XDomainRequest();
+                        xhr.open(method, url);
+                    } else {
+                        console.log("CORS not supported");
+                        alert("CORS not supported");
+                        xhr = null;
+                    }
+                    return xhr;
+                }
+
+        var xhr = createCORSRequest("POST", "https://banguat.gob.gt/variables/ws/TipoCambio.asmx?WSDL");
+
+        if(!xhr){
+         console.log("XHR issue");
+         return;
+        }
+
+        xhr.onload = function (){
+         var results = xhr.responseText;
+         console.log(results);
+        }
+
+        xhr.setRequestHeader('Content-Type', 'text/xml');
+        
+        xhr.send(str);
+        return xhr.responseText;
+
+ }
+
+
+function soapActivation(){
+  var parser, xmlDoc;
+    var xmlData = soapRequest();
+
+    const myarray = xmlData.split("fecha>");
+    const myarray2 = xmlData.split("referencia>");
+
+    console.log(" my array = "+myarray[1].replace(/</g, ""));
+    console.log(" my array = "+myarray2[1][0].replace(/</g, ""));
+
+    console.log("corriendo"+ xmlData);
+    parse = new DOMParser();
+    
+    //xmlDoc = parser.parseFromString(xmlData, 'xmlData/text');
+
+    document.getElementById("ida").innerHTML = "Fecha : "+myarray2[0] + "\nLa tasa de Cambio es: "+ myarray2[1] +" fuente: https://banguat.gob.gt/";
+
+ }
+
+
+
+
+
+
+
+
+
+   function  AddUser(name, last_name){
+   
+    //Gets first name intial
+    let initial = name.charAt(0);
+    //concats with the last name
+    let result1 = initial.concat(last_name);
+
+    return result1.toLowerCase();
+    
+    }
+
+      function CreateUser()
+    {
+      var name = document.getElementById("cname").value;
+      var password = document.getElementById("cpassword").value;
+      var email = document.getElementById("email").value;
+      var last_name = document.getElementById("last_name").value;
+
+      
+
+      if (name==""||password==""||email=="") {
+        return false;
+      }
+      else {
+        //POST Method API Rest
+      google.script.run.AddUser(name, last_name, password, email );
+    
+      document.getElementById("page2_id1").className = "page2_id1-off";
+      document.getElementById("page3_id1").className = "page3_id1";
+
+          }
+    }
+
+
+     function LoginUser()
+    {
+
+    var name = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    
+    google.script.run.withSuccessHandler(function(output) 
+    {
+      if(output == 'TRUE')
+      {
+         document.getElementById("displayname").innerHTML = name;
+         document.getElementById("page1_id1").className = "page1_class1-off";
+         document.getElementById("page4_id1").className = "page4_id1";
+         location.replace("http://18.220.94.192/CodeIg/CRUD_UMG/Index.php/welcome")    
+      }
+      else if(output == 'FALSE')
+      {
+        document.getElementById("errorMessage").innerHTML = "Invalid data";     
+      }    
+    }).checkUser(name, password );
+    }
+
+
+function RecoverUserPassword()
+    {
+    var name = document.getElementById("cname2").value;
+      var email = document.getElementById("email2").value;
+      var last_name = document.getElementById("last_name2").value;
+
+    google.script.run.withSuccessHandler(function(output) 
+    {
+      if(output == 'TRUE')
+      {
+        document.getElementById("page5_id1").className = "page5_id1-off";
+      document.getElementById("page3_id1").className = "page3_id1";
+         
+      }
+      else if(output == 'FALSE')
+      {
+        document.getElementById("errorMessage").innerHTML = "Invalid data";     
+      }    
+    }).recoverUserPass(name,last_name, email );
+    }
+
+    
+function function1(){
+    document.getElementById("page1_id1").className = "page1_class1-off";
+    document.getElementById("page2_id1").className = "page2_id1";
+}
+ 
+
+
+function function3(){ 
+  document.getElementById("page3_id1").className = "page3_id1-off";
+  document.getElementById("page5_id1").className = "page5_id1-off";
+   document.getElementById("page6_id1").className = "page6_id1-off";
+  document.getElementById("page1_id1").className = "page1_id1"; 
+}
+function function5(){
+    document.getElementById("page1_id1").className = "page1_class1-off";
+    document.getElementById("page5_id1").className = "page2_id1";
+}
+
+
+
+
+
+
+  </script>
+
+
+  
+  <style>
+
+/*page1*/
+.page1_class1-off{
+    display: none;
+  }
+
+
+/*page2*/
+.page2_class1{
+    display: none;
+  }
+
+.page2_id1-off{
+    display:none;
+}
+
+/*page2*/
+.page6_class1{
+    display: none;
+  }
+
+.page6_id1-off{
+    display:none;
+}
+
+/*page3*/
+.page3_class1{
+    display:none;
+
+}
+.page3_id1-off{
+    display:none;
+}
+
+/*page4*/
+.page4_class1{
+    display:none;
+
+}
+.page4_id1-off{
+    display:none;
+}
+
+/*page5*/
+.page5_class1{
+    display:none;
+
+}
+.page5_id1-off{
+    display:none;
+}
+
+input[type=text]:hover{
+        border-bottom:2px solid black;
+      }
+input[type=number]:hover{
+        border-bottom:2px solid black;
+      }
+input[type=password]:hover{
+        border-bottom:2px solid black;
+      }
+
+.user{
+display: inline-block;
+width: 75px;
+height: 75px;
+border: 8px solid black;
+border-radius: 50%;
+position: relative;
+overflow: hidden;
+box-sizing: border-box;
+}
+
+/*the head/*/
+.user::before{
+content: '';
+display: inline-block;
+width: 24px;
+height: 24px;
+background: black;
+border-radius: 50%;
+position: absolute;
+left: calc(50% - 11px);
+top: 10px;
+}
+
+/*the body*/
+.user::after{
+content: '';
+display: inline-block;
+width:50px;
+height:40px;
+background: black;
+border-radius: 50%;
+position: absolute;
+left: calc(50% - 24px);
+top: 39px;
+}
+
+.img{
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+</style>
+
+
+
+</html>
